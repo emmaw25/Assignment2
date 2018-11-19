@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_hqx_hhj_tfb">
+    <title>Disabling data collection</title>
+    <shortdesc>This section describes the procedures for disabling data collection in the DataPower
+        environment.</shortdesc>
+    <conbody>
+        <p>To unconfigure the Data Power® data collector, you must stop the data collector before
+            disabling it. For more information about stopping the data collector, see <xref
+                href="../reference/starting_and_stopping_the_data_collector.dita">Starting and
+                stopping the data collector</xref>.<note type="important">You do not have to stop
+                the data collector first if you are making configuration changes.</note></p>
+    </conbody>
+</concept>

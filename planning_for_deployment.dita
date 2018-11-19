@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_ezm_ysv_sfb">
+    <title>Planning for deployment</title>
+    <shortdesc>DataPower proxies are defined within <i>application domains</i>, and DataPower users
+        can be restricted to access some or all domains.</shortdesc>
+    <conbody>
+        <p>When configuring the DataPower data collector, you must understand how the domains and
+            users are defined on the monitored DataPower <ph keyref="brand"/> appliances, to ensure that the data
+            collector uses valid authentication credentials. This refers to user IDs and passwords
+            that have access to the DataPower domains containing the services proxies to be
+            monitored. In addition, you must decide how you want to aggregate or separate the data
+            collected from those domains for display in the Tivoli Enterprise Portal.</p>
+        <p>You can use DataPower <ph keyref="brand"/> appliances in several typical configurations: <dl>
+                <dlentry>
+                    <dt>Single appliance, single domain</dt>
+                    <dd>The data collector monitors a single DataPower <ph keyref="brand"/> appliance, with all of
+                        the monitored resources that are defined in a single domain on the
+                        appliance.</dd>
+                </dlentry>
+            </dl><dl>
+                <dlentry>
+                    <dt>Single appliance, multiple domains</dt>
+                    <dd>The data collector monitors a single DataPower <ph keyref="brand"/> appliance, but that
+                        appliance has monitored resources that are defined in more than one domain
+                        on the appliance.</dd>
+                </dlentry>
+            </dl><dl>
+                <dlentry>
+                    <dt>Multiple appliances with different configurations</dt>
+                    <dd>The data collector monitors multiple DataPower <ph keyref="brand"/> appliances, and each
+                        appliance has a different configuration of resources to be monitored. Each
+                        appliance is configured for a particular job, with no intention of
+                        load-balancing or fail-over between appliances.</dd>
+                </dlentry>
+            </dl><dl>
+                <dlentry>
+                    <dt>Multiple appliances with identical configurations</dt>
+                    <dd>The data collector monitors multiple DataPower <ph keyref="brand"/> appliances, and all of
+                        the appliances have an identical configuration of resources being monitored.
+                        All of the appliances are configured for the same job, taking advantage of
+                        load-balancing, and fail-over capabilities between appliances.</dd>
+                </dlentry>
+            </dl></p>
+        <p>Given these typical configurations, the DataPower data collector provides a great deal of
+            flexibility in defining how the collected monitoring data should be separated or
+            aggregated, across a single appliance or multiple appliances, for display in the Tivoli
+            Enterprise Portal. The following examples illustrate how data can be separated or
+            aggregated for managing the data from various domains and appliances:<dl>
+                <dlentry>
+                    <dt>Separation of data at the domain</dt>
+                    <dd>You can view the services management data for the resources in a single
+                        domain, separate from the data for resources in other domains.</dd>
+                </dlentry>
+            </dl><dl>
+                <dlentry>
+                    <dt>Aggregation of data across domains </dt>
+                    <dd>You can view the services management data for the resources in several
+                        domains (for example, all of the domains on a DataPower <ph keyref="brand"/> appliance) in an
+                        aggregated form, with no regard for the domain in which individual resources
+                        are defined.</dd>
+                </dlentry>
+            </dl><dl>
+                <dlentry>
+                    <dt>Separation of data at the appliance</dt>
+                    <dd>You can view the services management data for resources on a single
+                        DataPower <ph keyref="brand"/> appliance, separate from the data for resources on other
+                        appliances.</dd>
+                </dlentry>
+            </dl><dl>
+                <dlentry>
+                    <dt>Aggregation of data across appliances</dt>
+                    <dd>You can view the services management data for the resources on several
+                        DataPower <ph keyref="brand"/> appliances (for example, all of the appliances in a
+                        Configuring data collection: DataPower <ph keyref="brand"/> Appliance 3 load-balancing
+                            <i>cluster</i>) in an aggregated form, with no regard for what activity
+                        occurs on each individual appliance.</dd>
+                </dlentry>
+            </dl></p>
+        <p>By default, the DataPower data collector aggregates data for all of the monitored domains
+            on a single DataPower <ph keyref="brand"/> appliance (even if the domains are accessed
+            using different credentials), and keeps the data from each DataPower <ph keyref="brand"
+            /> appliance separated. See <xref href="enabling_data_collection.dita">Enabling data
+                collection</xref> for more information. However, operational flow data is collected
+            only by individual domains. Refer to <xref
+                href="../reference/creating_node_names_in_tivoli_enterprise_portal.dita">Creating
+                node names in Tivoli Enterprise Portal</xref> for additional details.</p>
+        <p>A single instance of the DataPower data collector can monitor any number of DataPower <ph keyref="brand"/>
+            appliances, limited only by the memory, CPU power, and other resources available to
+            it.</p>
+        <p>
+            <note type="important">IBM supports running only a single instance of the data collector
+                on any computer system.</note>
+        </p>
+    </conbody>
+</concept>

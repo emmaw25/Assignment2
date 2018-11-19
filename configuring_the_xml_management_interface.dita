@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_oqm_wvv_sfb">
+    <title>Configuring the XML Management Interface</title>
+    <shortdesc>The XML Management Interface on the appliance must be enabled using the DataPower
+        administration console.</shortdesc>
+    <taskbody>
+        <context>
+            <p>To configure the XML Management interface, complete the following steps:</p>
+        </context>
+        <steps>
+            <step>
+                <cmd>Start the DataPower administration console in a web browser
+                        (<codeph>https://hostname:9090/login.xml</codeph>).</cmd>
+            </step>
+            <step>
+                <cmd>Complete the following steps to enable the XML Management interface.</cmd>
+                <info>
+                    <ol id="ol_h2x_fwv_sfb">
+                        <li>Log in to the administration console as the admin user for the default
+                                domain.<fig id="fig_ed5_tcs_vfb">
+                                <image
+                                    href="../../Images/Configure_Web_Services_Management_Agent_page.jpg"
+                                    id="image_bpf_wcs_vfb" scale="60"/>
+                            </fig></li>
+                        <li>Navigate to <uicontrol>Objects</uicontrol> >
+                                <uicontrol>Management</uicontrol> > <uicontrol>XML Management
+                                Interface</uicontrol>.</li>
+                        <li>Make note of the port number that is displayed. You must specifiy this
+                            port number later when you enable or disable data collection.</li>
+                        <li>In the <uicontrol>Main</uicontrol> tab, find the
+                                <uicontrol>WS-Management Endpoint</uicontrol> option and select the
+                                <uicontrol>on</uicontrol> check box.</li>
+                        <li>Click <uicontrol>Apply</uicontrol> to activate the changes and enable
+                            the WS-Management Endpoint.</li>
+                    </ol>
+                </info>
+            </step>
+            <step>
+                <cmd>Complete the following steps to configure the Web Services Agent for the
+                    default domain:</cmd>
+                <info>
+                    <ol id="ol_zln_swv_sfb">
+                        <li>Navigate to <uicontrol>Services</uicontrol> >
+                                <uicontrol>Miscellaneous</uicontrol> > <uicontrol>Web Services
+                                Agent</uicontrol>. For example:</li>
+                        <li>Set <uicontrol>Administrative State</uicontrol> to
+                                <codeph>enabled</codeph>.</li>
+                        <li>Set the set <uicontrol>Buffering Mode</uicontrol> option to
+                                <codeph>discard</codeph> or <codeph>buffer</codeph>. The default
+                            setting is <codeph>discard</codeph>.</li>
+                    </ol>
+                    <p>When <uicontrol>Buffering Mode</uicontrol> is set to <codeph>buffer</codeph>,
+                        the Web Services Agent buffers transaction information for the current
+                        domain when no registered ITCAM for <ph keyref="brand"/> data collectors are running.
+                        Buffering reduces the loss of transaction information, but consumes more
+                        memory. Transaction records are buffered until the configured size limits
+                        are reached. Buffering is a better choice when initially configuring data
+                        collection, when processing high volumes of data, or when there are multiple
+                        ITCAM for <ph keyref="brand"/> subscribers.</p>
+                    <p>When <uicontrol>Buffering Mode</uicontrol> is set to
+                        <codeph>discard</codeph>, transaction information from the current domain is
+                        discarded when no registered ITCAM for <ph keyref="brand"/> data collectors are running.
+                        Complications can occur if a new ITCAM for <ph keyref="brand"/> subscriber replaces a former
+                        subscriber. High volumes of transactions might cause the Complete Records
+                        Count to reach the configured Maximum Record Size limit and transaction
+                        information to be discarded. Setting <uicontrol>Buffering Mode</uicontrol>
+                        to discard is suited to an environment where there is a single ITCAM for <ph keyref="brand"/>
+                        subscriber, where the DataPower appliance is handling a low volume of
+                        transaction data, and where the ITCAM for <ph keyref="brand"/> subscriber is collecting a low
+                        volume of metrics. For information about troubleshooting scenarios where
+                        transaction metrics are being discarded, see the <i>IBM Tivoli Composite
+                            Application Manager Troubleshooting Guide</i>.</p>
+                </info>
+            </step>
+            <step>
+                <cmd>Adjust the values for Maximum Record Size and Maximum Memory Usage, if
+                    necessary.</cmd>
+            </step>
+            <step>
+                <cmd>If you want the data collector to record message content in addition to summary
+                    metrics, change <uicontrol>Capture Mode</uicontrol> from <codeph>faults</codeph>
+                    to <codeph>all-messages</codeph>.</cmd>
+            </step>
+            <step>
+                <cmd>Configure the Web Services Agent for <i>all other domains</i> that are
+                    monitored by the DataPower data collector. For each domain, switch to the domain
+                    and complete step 3a on page 6 to step 3e.</cmd>
+            </step>
+        </steps>
+    </taskbody>
+</task>

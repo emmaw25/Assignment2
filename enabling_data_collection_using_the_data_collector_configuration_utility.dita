@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_pz3_2bb_tfb">
+    <title>Enabling data collection using the Data Collector Configuration utility</title>
+    <shortdesc></shortdesc>
+    <taskbody>
+        <context>
+            <p>To enable data collection using the Data Collector Configuration utility, complete
+                the following steps:</p>
+        </context>
+        <steps>
+            <step>
+                <cmd>Run the Data Collector Configuration utility (see <xref
+                        href="../reference/running_the_data_collector_configuration_utility.dita"
+                        >Running the Data Collector Configuration utility</xref>):</cmd>
+                <info>
+                    <ol id="ol_nzq_ncb_tfb">
+                        <li>Select the DataPower <ph keyref="brand"/> Appliance runtime
+                            environment.</li>
+                        <li>Select the <uicontrol>Configure</uicontrol> > <uicontrol>DataPower
+                                Instance</uicontrol> option.<fig id="fig_lxm_kds_vfb">
+                                <image
+                                    href="../../Images/Enabling_data_collection_on_a_data_power_instance.jpg.png"
+                                    id="image_udg_f2s_vfb"/>
+                            </fig></li>
+                        <li>Select the option to enable data collection.</li>
+                        <li>Specify the DataPower Host Name.</li>
+                        <li>Specify the DataPower user ID.</li>
+                        <li>Specify the DataPower password.<fig id="fig_pvg_qds_vfb">
+                                <image
+                                    href="../../Images/Enabling_dat_collection_in_a_datapower_runtime_environment.png"
+                                    id="image_zlw_n2s_vfb" scale="70"/>
+                            </fig></li>
+                        <li>The default DataPower port number (5500) and the default polling
+                            interval (10 seconds) are provided. Accept these defaults or specify
+                            different values.</li>
+                        <li>Verify that the DataPower Path is set to /.<note type="restriction">You
+                                cannot specify a path other than /. Changing its value has no
+                                effect.</note></li>
+                        <li>Specify the DataPower Domain List.</li>
+                        <li>Optionally specify the DataPower Display Group.<fig id="fig_rv1_q2s_vfb">
+                                <image
+                                    href="../../Images/Enabling_dat_collection_in_a_datapower_runtime_environment_2.jpg.png"
+                                    id="image_lys_q2s_vfb" scale="70"/>
+                            </fig></li>
+                        <li>Wait for the configuration utility to complete the operation.</li>
+                        <li>Exit the utility.</li>
+                    </ol>
+                    <note type="important">When you deploy the DataPower data collector, you must
+                        start the data collector once you have enabled it to begin collecting data.
+                        For more information about starting the data collector, see <xref
+                            href="../reference/starting_and_stopping_the_data_collector.dita"
+                            >Starting and stopping the data collector</xref>.</note>
+                </info>
+                <info>© For the remaining input parameters, refer to Table 2 on page 24 for a
+                    description of the information that is required, and see the additional
+                    information and examples of running the KD4configDC command to learn more about
+                    how to specify these parameters for your environment.</info>
+            </step>
+        </steps>
+    </taskbody>
+</task>

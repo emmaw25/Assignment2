@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_gqh_mjj_tfb">
+    <title>Disabling the data collector using the Data Collector Configuration utility</title>
+    <shortdesc></shortdesc>
+    <taskbody>
+        <context>
+            <p>To disable data collection with the Data Collector Configuration utility, complete
+                the following steps: </p>
+        </context>
+        <steps>
+            <step>
+                <cmd>Run the Data Collector Configuration utility (see <xref
+                        href="../reference/running_the_data_collector_configuration_utility.dita"
+                        >Running the Data Collector Configuration utility</xref>):</cmd>
+                <info>
+                    <ol id="ol_mzj_sjj_tfb">
+                        <li>Select the DataPower <ph keyref="brand" product="SIH"/> Appliance
+                            runtime environment. </li>
+                        <li>Select the Configure DataPower Instance option.</li>
+                        <li>Select the option to disable data collection.<div>For the remaining
+                                input parameters, refer to Table 2 on page 24 for a description of
+                                the information that is required, and see the additional information
+                                and examples of running the KD4configDC command to learn more about
+                                how to specify these parameters for your environment.</div></li>
+                        <li>Specify the DataPower Host Name.</li>
+                        <li>Specify the DataPower user ID.</li>
+                        <li>Specify the DataPower password.</li>
+                        <li>The default DataPower port number (5500) and the default polling
+                            interval (10 seconds) is provided. Accept these defaults or type over
+                            them to specify different values.</li>
+                        <li>Specify the DataPower Domain List.</li>
+                        <li>Optionally specify the DataPower Display Group.</li>
+                        <li>Wait for the configuration utility to complete the operation.</li>
+                        <li>. Exit the utility.</li>
+                    </ol>
+                </info>
+            </step>
+        </steps>
+    </taskbody>
+</task>

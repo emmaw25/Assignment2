@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_ohv_5yd_tfb">
+    <title>Enabling data collection using the KD4configDC command</title>
+    <shortdesc>The syntax for running the KD4configDC command for the DataPower environment is
+        similar to the syntax for other supported ITCAM for <ph keyref="brand"/> data collector environments. </shortdesc>
+    <conbody>
+        <p>To run the <uicontrol>KD4configDC</uicontrol> command, first navigate to the following
+            location, depending on your operating system:</p>
+        <p>Enter the KD4configDC command:<ul id="ul_anl_zyd_tfb">
+                <li>For supported Windows operating systems: <codeph>KD4configDC {-enable |
+                        -disable} -env 8</codeph>
+                </li>
+                <li>For supported AIX, Solaris, HP-UX, and Linux operating systems: KD4configDC .sh
+                    {-enable | - disable} -env 8</li>
+            </ul></p>
+    </conbody>
+</concept>

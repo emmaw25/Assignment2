@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_wdx_45v_sfb">
+    <title>Unconfiguration steps</title>
+    <shortdesc></shortdesc>
+    <taskbody>
+        <context>
+            <p>To unconfigure the DataPower Data Collector in your environment, complete the
+                following general steps: </p>
+        </context>
+        <steps>
+            <step>
+                <cmd>Run the <codeph>stopDC</codeph> script to stop the Data Collector (see <xref
+                        href="../reference/starting_and_stopping_the_data_collector.dita">Starting
+                        and stopping the data collector</xref> for details) when the DataPower proxy
+                    is started as a background task, or run the <uicontrol>stop</uicontrol>,
+                        <uicontrol>quit</uicontrol>, or <uicontrol>exit</uicontrol> command from the
+                    console to initiate an orderly shutdown of the DataPower Data Collector.</cmd>
+            </step>
+            <step>
+                <cmd>Disable the DataPower Data Collector (see <xref
+                        href="../concepts/disabling_data_collection.dita">Disabling data
+                        collection</xref> for details).</cmd>
+            </step>
+        </steps>
+    </taskbody>
+</task>

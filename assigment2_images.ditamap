@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+    <title>Images</title>
+    <topicgroup>
+        <keydef keys="configurewebservices" href="../../College/configuringDataCollector/Images/Configure_Web_Services_Management_Agent_page.jpg"/>
+        <keydef keys="enablingdatacollection1" href="../../College/configuringDataCollector/Images/Enabling_dat_collection_in_a_datapower_runtime_environment.jpg"></keydef>
+        <keydef keys="enablingdatacollection2" href="../../College/configuringDataCollector/Images/Enabling_dat_collection_in_a_datapower_runtime_environment_2.jpg"></keydef>
+        <keydef keys="enablingdatacollectiondatpower" href="../../College/configuringDataCollector/Images/Enabling_data_collection_on_a_data_power_instance.jpg"></keydef>
+    </topicgroup>
+</map>

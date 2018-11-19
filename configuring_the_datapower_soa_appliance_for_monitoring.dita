@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_ahg_cvv_sfb">
+    <title>Configuring the DataPower <ph keyref="brand"/> appliance for monitoring</title>
+    <shortdesc>Before a DataPower <ph keyref="brand"/> appliance can be monitored by the DataPower data collector,
+        configure the DataPower <ph keyref="brand"/> appliance by completing these tasks, described in more detail in
+        the sections that follow:</shortdesc>
+    <conbody>
+        <p>
+            <ul id="ul_tkl_gvv_sfb">
+                <li>Upgrade your DataPower firmware to the minimum supported version.</li>
+                <li>Configure a user account on the DataPower <ph keyref="brand"/> appliance for use with the
+                    DataPower data collector.</li>
+                <li>Enable the XML Management Interface on the appliance.</li>
+                <li>Check additional optional settings for each domain to be monitored.</li>
+                <li>Enable the ITCAM for <ph keyref="brand"/> transforms for the Web Services Proxy gateways and the
+                    Multi-Protocol gateways as needed.</li>
+                <li>Configure the AAA policy for the Web Services Proxy gateways and the
+                    Multi-Protocol gateways if you plan to monitor Web service requesters by user
+                    ID.</li>
+            </ul>
+        </p>
+    </conbody>
+</concept>

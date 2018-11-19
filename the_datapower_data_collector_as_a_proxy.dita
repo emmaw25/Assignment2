@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_cmv_mqv_sfb">
+    <title>The DataPower data collector as a proxy</title>
+    <shortdesc>Data collector provided with ITCAM for <ph keyref="brand"/> are usually installed directly into the
+        application server routine environment hosting the services being monitored. The DataPower
+        <ph keyref="brand"/> appliance, however, does not support the installation of additional software, such as a
+        data collector.</shortdesc>
+    <conbody>
+        <p>Unlike other application server runtime environments, the ITCAM for <ph keyref="brand"/> data collector
+            for the DataPower environment is installed on a separate computer system and uses a
+            special communication mechanism that allows external software applications to receive
+            data from its internal transaction log.</p>
+        <p>This communication mechanism is used to retrieve monitoring data about services requests
+            flowing through one or more DataPower <ph keyref="brand"/> appliances, and to convert the data into a
+            format that ITCAM for <ph keyref="brand"/> can process. In this way, the DataPower data collector acts as
+            a proxy between the DataPower <ph keyref="brand"/> appliances and the ITCAM for <ph keyref="brand"/> monitoring agent. </p>
+        <p>The DataPower data collector can be installed on a dedicated computer system, or it can
+            run on a computer that is also hosting data collectors for other application server
+            runtime environments.<note type="important">IBM supports only one instance of the
+                DataPower data collector running on any computer system. This one data collector
+                instance, however, can monitor any number of domains on any number of appliances,
+                subject to available resources.</note></p>
+        <p>When data collection is enabled for the DataPower environment, the data collector
+            subscribes to each monitored DataPower <ph keyref="brand"/> appliance and then polls the appliance for
+            monitoring data at the specified interval. The data that is retrieved from the DataPower
+            <ph keyref="brand"/> appliance is written to metric log files in the format used by ITCAM for <ph keyref="brand"/>. When
+            this data is later displayed in the Tivoli Enterprise Portal, nodes are displayed in the
+            Tivoli Enterprise Portal Navigator view that represent the DataPower <ph keyref="brand"/> appliances that
+            are being monitored. You can select workspaces under these nodes and view the services
+            management data for the service requests flowing through the monitored DataPower <ph keyref="brand"/>
+            appliances.</p>
+        <p>The DataPower data collector can subscribe to multiple DataPower <ph keyref="brand"/> appliances, and
+            retrieve and manage data from multiple domains. This data can then be separated by
+            DataPower domain or aggregated across multiple domains and appliances, depending on how
+            you configure the data collector. The DataPower data collector uses a configuration file
+            that contains information about which DataPower <ph keyref="brand"/> appliances are being monitored and
+            information needed to establish communication with each monitored appliance</p>
+    </conbody>
+</concept>

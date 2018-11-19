@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_zyq_4fr_vfb">
+    <title>Additional topics</title>
+    
+    <shortdesc>The following topics within this chapter contain empty pages that are referenced in
+        the document, that we were not asked to transfer into DITA for the assignment.</shortdesc>
+    <conbody>
+        <p> As requested, I have created empty topics for the references to ensure the links work in
+            the document. </p>
+    </conbody>
+</concept>

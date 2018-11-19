@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+
+<task id="task_x2f_c5v_sfb" status="new">
+    <title>Deploying the Data Power Data Collector</title>
+    <shortdesc> How to deploy the DataPower data collector in your environment.</shortdesc>
+    <taskbody>
+        <prereq>Before using the DataPower data collector proxy, you must upgrade the firmware on
+            DataPower <ph keyref="brand"/> appliances that you want to monitor, to include the
+            necessary monitoring and data transformation capabilities.</prereq>
+        <context>
+            <p/>
+        </context>
+        <steps>
+            <step>
+                <cmd>Configure your DataPower <ph keyref="brand"/> appliances for monitoring (see
+                        <xref
+                        href="../concepts/configuring_the_datapower_soa_appliance_for_monitoring.dita"
+                        >Configuring the DataPower <ph keyref="brand"/> appliance for
+                        monitoring</xref> for details).</cmd>
+            </step>
+            <step>
+                <cmd>Enable the DataPower data collector (see <xref
+                        href="../concepts/enabling_data_collection.dita">Enabling data
+                        collection</xref> for details).</cmd>
+            </step>
+            <step>
+                <cmd>Run the <codeph>startDC</codeph> script to start the data collector (see <xref
+                        href="../reference/starting_and_stopping_the_data_collector.dita">Starting
+                        and stopping the data collector</xref> for details), or configure the data
+                    collector to run in the background and start the background task.</cmd>
+            </step>
+        </steps>
+    </taskbody>
+</task>

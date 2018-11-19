@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_rb1_pyv_sfb">
+    <title>The DataPower configuration file</title>
+    <shortdesc>For the DataPower data collector, the Data Collector Configuration utility and the
+        KD4configDC command manipulate the contents of a special DataPower configuration file by
+        adding sections to the file when new DataPower monitoring is enabled, and removing sections
+        from the file when monitoring is disabled.</shortdesc>
+    <conbody>
+        <p>ring is enabled, and removing sections from the file when monitoring is disabled. Each
+            invocation of the Data Collector Configuration utility or the
+                <uicontrol>KD4configDC</uicontrol> command adds, updates, or removes one section of
+            the DataPower configuration file. Each section of the DataPower configuration file might
+            be associated with its own data group, or it might be part of a larger data group to
+            which other sections of the configuration file also belong.</p>
+        <p>The DataPower data collector uses this configuration file to identify the DataPower <ph keyref="brand"/>
+            appliances that are to be monitored and to specify all of the information that is needed
+            to communicate with those appliances. Typical information that is stored for each
+            connection includes host name and port, user ID and password, domains to monitor, and
+            polling interval.</p>
+        <p>The configuration file is in the <codeph>ITCAM4SOA_Home/KD4/config</codeph> directory on
+            Linux or UNIX systems and the <codeph>ITCAM4SOA_Home/KD4/config</codeph> directory on
+            Windows systems and is called<codeph> KD4.dpdcConfig.properties</codeph>. This file is
+            maintained separately from the existing <codeph>KD4.dc.properties</codeph> configuration
+            file. This is a sample DataPower configuration file:</p>
+        <p># Sample DataPower data collector configuration file DataPower.count=3 </p>
+        <p># </p>
+        <p>DataPower.host.1=dpbox1 </p>
+        <p>DataPower.port.1=5550 </p>
+        <p>DataPower.path.1=/ </p>
+        <p>DataPower.poll.1=60 </p>
+        <p>DataPower.user.1=admin </p>
+        <p>DataPower.encpswd.1=#$%*&amp; </p>
+        <p>DataPower.domainlist.1=default,testdom1 </p>
+        <p>DataPower.displaygroup.1=dpbox1 </p>
+        <p>DataPower.subExpire.1=15 </p>
+        <p>DataPower.maxrecords.1=1000 # </p>
+        <p>DataPower.host.2=dpbox2 </p>
+        <p>DataPower.port.2=5550 </p>
+        <p>DataPower.path.2=/ </p>
+        <p>DataPower.poll.2=30 </p>
+        <p>DataPower.user.2=user1 </p>
+        <p>DataPower.encpswd.2=&amp;*%$# </p>
+        <p>DataPower.domainlist.2=userdom1,userdom2,userdom3 </p>
+        <p>DataPower.displaygroup.2=user_doms </p>
+        <p>DataPower.subExpire.2=15</p>
+        <p>DataPower.maxrecords.2=1000</p>
+        <p>#</p>
+        <p>DataPower.host.3=dpbox2 </p>
+        <p>DataPower.port.3=5550 </p>
+        <p>DataPower.path.3=/ </p>
+        <p>DataPower.poll.3=30 </p>
+        <p>DataPower.user.3=admin </p>
+        <p>DataPower.encpswd.3=*%$#&amp; </p>
+        <p>DataPower.displaygroup.3=all_doms </p>
+        <p>DataPower.subExpire.3=15 </p>
+        <p>DataPower.maxrecords.3=1000</p>
+        <p>In the example, there are three sections in the configuration file. The properties in
+            each of the three sections provide all of the information that is needed to establish
+            and manage a single connection or session with each DataPower SOA appliance.</p>
+        <p>Change the information in this configuration file using either the Data Collector
+            Configuration utility or the KD4configDC command. You can only modify the parameters
+            that are set when you first run the Data Collector Configuration utility or when you
+            first issued the KD4configDC command. To set additional parameters, you must manually
+            add them to the configuration file.</p>
+        <p>Using various combinations of parameters in the Data Collector Configuration utility
+            input pages or in the KD4configDC command, you can achieve different monitoring
+            configurations to separate or aggregate data among domains and appliances. See
+            “Considerations for enabling data collection for DataPower monitoring” on page 28 for
+            more information.</p>
+        <p>Before you configure your DataPower environment for data collection, consult with your
+            local systems management planners to understand which domains on which DataPower SOA
+            appliances are to be monitored and how the data from these domains and appliances should
+            be separated or aggregated for display in the Tivoli Enterprise Portal.</p>
+        <p>To set the DataPower.maxrecords property to an optimal value, it is useful to determine
+            the number of transactions that are processed by each of the configured domains. The
+            DataPower.maxrecords property must be set in line with the expected traffic levels of
+            each configured domain. For more information about setting the transaction rate, see
+                <xref href="optimizing_performance.dita">Optimizing performance</xref> on page
+                40.<note type="restriction">In an upgrade scenario, to set the maximum number of
+                records for an existing display group, you must add the DataPower.maxrecords
+                parameter manually to the section in the <codeph>KD4.dpdcConfig.properties</codeph>
+                file that configures the display group.</note></p>
+    </conbody>
+</concept>

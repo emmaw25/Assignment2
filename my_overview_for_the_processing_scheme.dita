@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_rnh_sgr_vfb">
+    <title>My overview for the processing scheme</title>
+    <shortdesc>I have created a processing scheme based on the brand of the document. </shortdesc>
+    <conbody>
+        <p>I decided to use the brand of the document as the processing scheme because I feel that
+            this is a relevant and real-world example of how processing is used in documentation.
+            Often similar products created by the same company will change the name of the product
+            in a document, and replace with another product. I wanted to recreate this for my
+            assignment so that I get a real understanding of how processing works in a document.
+            Anywhere that the product name 'SOA' appeared, I replaced with the keydef of 'Brand'. I
+            created a fake product name, 'SIH', which will appear whenever I change the product in
+            the Attributes list.</p>
+        <p>In terms of flagging, I have also applied a 'New' and 'Deleted' status to the Attributes
+            list. This is to indicate whenever a new piece of text has been added to the document
+            version, and when a piece of text has been deleted from the document version. I also
+            feel that this is a good opportunity to use real-world examples of how conditionalising
+            works in DITA. </p>
+    </conbody>
+</concept>

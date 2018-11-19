@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_sjs_qtp_sfb">
+    <title>Configuring Data Collection: DataPower <ph keyref="brand"/> Appliance</title>
+    <shortdesc>This section describes the support for monitoring of service flows through an IBM®
+        WebSphere® DataPower® <ph keyref="brand"></ph> appliance, where the ITCAM for <ph keyref="brand"/> data collector acts as a proxy
+        between the services clients and servers.</shortdesc>
+    <conbody>
+        <p> The list of versions of the DataPower <ph keyref="brand"/> appliance supported by ITCAM for <ph keyref="brand"></ph> 7.2 Fix
+            Pack 1 is available from the Software product compatibility reports website. For
+            information about accessing reports from this website, see Required software. </p>
+        <p>The DataPower data collector can be integrated with ITCAM for Transactions. If
+            configured, transaction events are sent to a Transaction Collector which stores and
+            aggregates transaction data from multiple data collectors. For more information about
+            configuring the interface to ITCAM for Transactions, see Integrating with ITCAM for
+            Transactions. </p>
+        <p>IBM WebSphere DataPower <ph keyref="brand"></ph> appliances are used for processing XML messages, and
+            providing message transformation, services acceleration, and security functions. A
+            DataPower appliance is typically used to improve the security and performance of
+            services by offloading functions from the application server that is hosting the target
+            service to a DataPower <ph keyref="brand"></ph> appliance. Typical functions that are off-loaded include;
+            authentication and authorization, XML schema validation, and services encryption and
+            decryption.</p>
+        <p>ITCAM for <ph keyref="brand"/> provides a DataPower data collector that operates as a proxy and monitors
+            services flows through a DataPower <ph keyref="brand"/> appliance, providing similar services management
+            and availability information that ITCAM for <ph keyref="brand"/> currently provides for application
+            server runtime environments. This information is displayed in the Tivoli® Enterprise
+            Portal using the usual predefined or user-defined workspaces and views. DataPower
+            supports two proxy types that can process <ph keyref="brand"/> messages:</p>
+        <p>The Web Services Proxy You configure a Web Services Proxy by importing one or more WSDL
+            files and then telling the appliance where to direct those messages. Thus, the Web
+            Services Proxy receives only SOAP messages. The Multi-Protocol Gateway The
+            Multi-Protocol Gateway is more versatile than the Web Services Proxy. You can use it to
+            process nearly any type of message, including SOAP, non-SOAP XML, text, or binary. For
+            XML messages (including SOAP), XSL transforms are used to manipulate the message. For
+            non-XML messages, similar transform actions can be built using IBM WebSphere
+            Transformation Extender (for more information about this product, see
+            http://www-306.ibm.com/software/integration/wdatastagetx/).</p>
+        <hazardstatement>
+            <messagepanel id="messagepanel_xds_r22_5fb">
+                <typeofhazard>Firmware</typeofhazard>
+                <howtoavoid>Before using the DataPower data collector proxy, you must upgrade the
+                    firmware on DataPower <ph keyref="brand"/> appliances that you want to monitor, to include the
+                    necessary monitoring and data transformation capabilities.</howtoavoid>
+                <howtoavoid>Upgrade your firmware to at least version 3.7.1 or later to monitor
+                    traffic through the Web Services Proxy.</howtoavoid>
+                <howtoavoid>Upgrade your firmware to at least version 3.7.1 Fix Pack 4 or later to
+                    monitor traffic through a Multi-Protocol Gateway.</howtoavoid>
+                <howtoavoid>Consult your DataPower Appliance documentation for information about
+                    upgrading your firmware level.</howtoavoid>
+            </messagepanel>
+        </hazardstatement>
+    </conbody>
+</concept>

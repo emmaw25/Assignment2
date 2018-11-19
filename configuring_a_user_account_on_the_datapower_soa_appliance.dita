@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_ecz_mvv_sfb">
+    <title>Configuring a user account on the DataPower <ph keyref="brand"/> appliance</title>
+    <shortdesc>The DataPower user ID used by the data collector must belong to a user group with the
+        following permissions:</shortdesc>
+    <conbody>
+        <p>
+            <ul id="ul_uzb_pvv_sfb">
+                <li><i>Read</i> permission on the Login XML-Mgmt Resource Type in the default
+                    domain.</li>
+                <li><i>Read</i> permission on the XML-Mgmt Resource Type in each domain to be
+                    monitored using this user ID.</li>
+                <li><i>Read</i> permission on the (any) Resource Type in each domain to be monitored
+                    using this user ID.</li>
+            </ul>
+        </p>
+        <p>See your <i>DataPower WebGUI Guide</i> or <i>DataPower CLI Reference Guide</i> for
+            details on configuring user group permissions.</p>
+    </conbody>
+</concept>

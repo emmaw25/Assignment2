@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<val>
+    
+    <prop action="include" att="product" val="SOA" />
+    <prop action="include" att="product" val="SIH"></prop>
+    <revprop action="flag" val="Alpha" changebar="gray" backcolor="red"/>
+    <revprop action="flag" val="Beta" changebar="gray" backcolor="yellow"/>
+    <revprop action="flag" val="deleted" changebar="color:Red;style:solid;width:4pt;offset:12pt"/>
+    <revprop action="flag" val="changed" changebar="color:Yellow;style:solid;width:4pt;offset:12pt"/>
+    <revprop action="flag" val="new" changebar="color:Green;style:solid;width:4pt;offset:12pt"/>
+</val>

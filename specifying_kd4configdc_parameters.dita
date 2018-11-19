@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_vfr_l2j_tfb">
+    <title>Specifying KD4configDC parameters</title>
+    <shortdesc>The env specific parameters defined for the DataPower invocation of the KD4configDC
+        command are a series of key and value pairs that define the necessary properties for the
+        affected section of the DataPower configuration file. These key and value pairs, which you
+        can specify in any order on the command line, are shown in Table 2 on page 24.</shortdesc>
+    <conbody>
+        <p>
+            <table frame="all" id="table_v4p_y2j_tfb">
+                <title>DataPower key and value pairs for the KD4configDC command</title>
+                <tgroup cols="4">
+                    <colspec colname="c1" colnum="1" colwidth="1*"/>
+                    <colspec colname="c2" colnum="2" colwidth="1*"/>
+                    <colspec colname="c3" colnum="3" colwidth="1*"/>
+                    <colspec colname="c4" colnum="4" colwidth="1*"/>
+                    <thead>
+                        <row>
+                            <entry>Parameter</entry>
+                            <entry>Optional / Required</entry>
+                            <entry>Default value</entry>
+                            <entry>Description</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>-host <i>host name or IP address</i></entry>
+                            <entry>Required</entry>
+                            <entry/>
+                            <entry>Defines the DataPower <ph keyref="brand"/> appliance host name or IP address. This
+                                host name is used to establish a socket connection and is used as
+                                part of the Web address pointing to the DataPower <ph keyref="brand"/> appliance.
+                                This value can be any length string, with no blank characters. See
+                                “Creating node names in Tivoli Enterprise Portal” on page 25
+                                regarding possible truncation of this value in the node
+                                name.</entry>
+                        </row>
+                        <row>
+                            <entry>-user <i>user ID</i></entry>
+                            <entry>Required</entry>
+                            <entry/>
+                            <entry>Defines the DataPower <ph keyref="brand"/> appliance authentication user. This
+                                user must be a valid user for the DataPower <ph keyref="brand"/> appliance defined by
+                                the -host parameter. See your DataPower documentation for
+                                information about creating and managing user IDs for DataPower <ph keyref="brand"/>
+                                appliances. See “Configuring a user account on the DataPower <ph keyref="brand"/>
+                                appliance” on page 5 for more information.</entry>
+                        </row>
+                        <row>
+                            <entry>-pswd <i>password</i></entry>
+                            <entry>Optional</entry>
+                            <entry>User is prompted, if necessary</entry>
+                            <entry>Defines the DataPower <ph keyref="brand"/> appliance authentication password,
+                                entered in clear text (not encoded). This password must be valid for
+                                the user defined in the <codeph>–user</codeph> parameter, and must
+                                be valid for the DataPower <ph keyref="brand"/> appliance defined by the
+                                    <codeph>–host</codeph> parameter. This password is automatically
+                                converted to an encoded (masked) form and is stored in the DataPower
+                                configuration file. See your DataPower documentation for information
+                                about creating and managing passwords for DataPower <ph keyref="brand"/>
+                                appliances.</entry>
+                        </row>
+                        <row>
+                            <entry>-port <i>port number</i></entry>
+                            <entry>Optional</entry>
+                            <entry>5550</entry>
+                            <entry>Defines the DataPower <ph keyref="brand"/> appliance port number. This port number
+                                is used to establish a socket connection and is used as part of the
+                                Web address pointing to the DataPower <ph keyref="brand"/> appliance. This value must
+                                be an integer from 0 to 65535. If this parameter is not specified,
+                                the default value is used.</entry>
+                        </row>
+                        <row>
+                            <entry>-path <i>path string</i></entry>
+                            <entry>Required</entry>
+                            <entry>/</entry>
+                            <entry>Defines the DataPower <ph keyref="brand"/> appliance path. This path is used as
+                                part of the Web address pointing to the DataPower <ph keyref="brand"/>
+                                    appliance.<note type="restriction">You cannot specify a path
+                                    other than /. Changing its value has no effect.</note></entry>
+                        </row>
+                        <row>
+                            <entry>-poll <i>polling interval</i></entry>
+                            <entry>Optional</entry>
+                            <entry>10 seconds</entry>
+                            <entry>Defines the DataPower <ph keyref="brand"/> appliance polling interval (in
+                                seconds). The data collector waits this amount of time between each
+                                poll of the DataPower <ph keyref="brand"/> appliance. This must be an integer value,
+                                specified in seconds, between 1 and 300 (1 second to 5
+                                minutes).</entry>
+                        </row>
+                        <row>
+                            <entry>-maxrecords maximum number of records</entry>
+                            <entry>Optional</entry>
+                            <entry>15000</entry>
+                            <entry>Defines the maximum number of records that the DataPower data
+                                collector can process from the DataPower <ph keyref="brand"/> appliance per polling
+                                interval. This must be an integer value, between 1 and
+                                30000.</entry>
+                        </row>
+                        <row>
+                            <entry>-subexpire <i> length of time the subscription is
+                                valid</i></entry>
+                            <entry>Optional</entry>
+                            <entry>15</entry>
+                            <entry>Defines the length of time, in minutes, that the subscription of
+                                the DataPower data collector to the DataPower appliance remains
+                                valid. At the end of the subscription period, the DataPower data
+                                collector renews its subscription to the DataPower appliance. This
+                                must be an integer value, specified in minutes, between 3 and
+                                30.</entry>
+                        </row>
+                        <row>
+                            <entry>-domainlist<i> domainA, domainB, ...domainZ</i></entry>
+                            <entry>Optional</entry>
+                            <entry>No <codeph>domainlist</codeph> property is generated</entry>
+                            <entry>Defines the DataPower <ph keyref="brand"/> appliance domain list. This is a
+                                comma-separated list of domains to be monitored on the associated
+                                DataPower <ph keyref="brand"/> appliance. Any domains in this list that are not
+                                authorized to the user defined by the <codeph>-user</codeph>
+                                parameter are not monitored. Each domain can be any string, with no
+                                blank characters. If you specify more than one domain name,
+                                separated by commas, the entire domain list must be enclosed in
+                                double quotation marks (for example, –domainlist
+                                "domain1,domain2,domain3". See “Considerations for enabling data
+                                collection for DataPower monitoring” on page 28 for more information
+                                about using this domain list.</entry>
+                        </row>
+                        <row>
+                            <entry>-displaygroup <i>display group</i></entry>
+                            <entry>Optional</entry>
+                            <entry>No <codeph>displaygroup</codeph> property is generated</entry>
+                            <entry>Defines the DataPower <ph keyref="brand"/> appliance display name. The name can be
+                                any string, with no blank characters, up to 64 characters long. See
+                                “Creating node names in Tivoli Enterprise Portal” regarding possible
+                                truncation of this value in the node name. See “Considerations for
+                                enabling data collection for DataPower monitoring” on page 28 for
+                                more information about the use of this property.</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <note type="important">When you deploy the DataPower data collector, you must start the
+                data collector once you have enabled it to begin collecting data. For more
+                information about starting the data collector, see “Starting and stopping the data
+                collector” on page 33.</note>
+        </p>
+    </conbody>
+</concept>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generalTask.dtd">
+<task id="task_km5_5hj_tfb">
+    <title>Upgrading the data collector</title>
+    <shortdesc>If you are upgrading the data collector for the DataPower environment, <i>do not</i>
+        use the <codeph>-disable</codeph> option of the KD$configDC script or the Data Collector
+        Configuration utility described in this section.</shortdesc>
+    <taskbody>
+        <context>
+            <p>Instead, you should complete the following steps:</p>
+        </context>
+        <steps>
+            <step>
+                <cmd>Stop the DataPower data collector using the stopDC command (see <xref
+                        href="../reference/starting_and_stopping_the_data_collector.dita">Starting
+                        and stopping the data collector</xref> for more information).</cmd>
+            </step>
+            <step>
+                <cmd>Deregister the service or daemon, if applicable. See <xref
+                        href="../reference/running_the_datapower_data_collector_as_a_windows_service_or_unix_daemon.dita"
+                        >Running the DataPower data collector as a Windows service or UNIX
+                        daemon</xref> for the procedures to stop a registered DataPower data
+                    collector and to deregister the service to remove it from the list of Windows
+                    services, if applicable.</cmd>
+            </step>
+        </steps>
+        <result>
+            <p>See Upgrading to ITCAM for <ph keyref="brand"/> version 7.2 for more information about upgrading your
+                monitoring environment from a previous version.</p>
+        </result>
+    </taskbody>
+</task>
